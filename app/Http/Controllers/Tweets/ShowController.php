@@ -12,6 +12,6 @@ class ShowController extends Controller
      */
     public function __invoke(Request $request, $id)
     {
-        return "hello ${id}";
+        return view('tweets.show', ['id' => $id ]);
     }
 }
