@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Tweet extends Model
 {
     use HasFactory;
+
+    public static function tweetOrder() {
+        return self::latest()->get();
+    }
 }
