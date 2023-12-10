@@ -12,6 +12,6 @@ class IndexController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return 'hello';
+        return view('tweets.index', ['name' => 'わー']);
     }
 }
