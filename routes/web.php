@@ -17,5 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tweets', \App\Http\Controllers\Tweets\IndexController::class);
-Route::get('/tweets/{id}', \App\Http\Controllers\Tweets\ShowController::class);
+Route::name('tweets.')->group(function () {
+    Route::get('/tweets', \App\Http\Controllers\Tweets\IndexController::class)
+        ->name('index');
+
+    Route::post('/tweets/create', \App\Http\Controllers\Tweets\CreateController::class)
+        ->name('create');
+
+    Route::get('/tweets/{id}', \App\Http\Controllers\Tweets\ShowController::class)
+        ->name('show');
+});
