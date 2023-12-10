@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Tweets;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Tweet;
 
 class IndexController extends Controller
 {
@@ -12,6 +13,8 @@ class IndexController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('tweets.index', ['name' => 'わー']);
+        $tweets = Tweet::all();
+        return view('tweets.index')
+			->with('tweets', $tweets);
     }
 }
