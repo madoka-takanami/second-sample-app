@@ -26,4 +26,10 @@ Route::name('tweets.')->group(function () {
 
     Route::get('/tweets/{id}', \App\Http\Controllers\Tweets\ShowController::class)
         ->name('show');
+
+    Route::get('/tweets/update/{id}', \App\Http\Controllers\Tweets\Update\IndexController::class)
+        ->name('update.index');
+
+    Route::put('/tweets/update/{id}', \App\Http\Controllers\Tweets\Update\PutController::class)
+        ->name('update.put');
 });
