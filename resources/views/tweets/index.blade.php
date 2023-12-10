@@ -4,10 +4,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>ついったー</title>
 </head>
 <body>
     <h1>つぶやき一覧</h1>
-    <p>{{ $name }}</p>
-</body>
+      <div class="tweets">
+        @foreach($tweets as $tweet)
+          <div class="tweet">
+            <p>{{ $tweet->content }}</p>
+            <p>{{ $tweet->created_at }}</p>
+          </div>
+        @endforeach
+    </div>
+  </body>
 </html>
